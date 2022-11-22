@@ -46,6 +46,28 @@ public enum ZeeOp {
             operandStack.push(operandStack.pop() - second);
         }
     },
+    //add multiply to the VM
+    MUL("multiply"){
+        public void execute(String[] args) {
+            int second = operandStack.pop();
+            operandStack.push(operandStack.pop() * second);
+        }
+    },
+    //add divide to the VM
+    DIV("divide"){
+        public void execute(String[] args) {
+            int second = operandStack.pop();
+            operandStack.push(operandStack.pop() / second);
+        }
+    },
+    //add mod to the VM
+    MOD("mod"){
+        public void execute(String[] args) {
+            int second = operandStack.pop();
+            operandStack.push(operandStack.pop() % second);
+        }
+    },
+    //add multiply, divide and mod to the VM
     PRINT("print"){
         public void execute(String[] args) {
                 String p = operandStack.pop().toString();
